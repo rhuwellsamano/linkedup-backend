@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       # root 'welcome#index'
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
+      post '/users', to: 'users#create'
       # mount ActionCable.server => '/'
       mount ActionCable.server => '/cable'
     end
