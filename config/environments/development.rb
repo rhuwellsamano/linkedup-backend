@@ -6,7 +6,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/, 'http://10.39.109.8:3000', 'http://192.168.1.9:3000',  'http://10.39.105.71:3000']
+  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/, 'http://10.39.109.8:3000', 'http://192.168.1.9:3000',  'http://10.39.105.71:3000', '*']
 
   # [/http:\/\/*/, /https:\/\/*/, 'http://10.39.109.8:3000', 'http://192.168.1.9:3000',  '10.39.111.52:3000']
 
