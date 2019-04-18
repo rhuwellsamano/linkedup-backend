@@ -23,12 +23,19 @@ class Api::V1::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    ActionCable.server.broadcast 'appearance_channel', json_response(@user)
+    # ActionCable.server.broadcast 'appearance_channel', json_response(@user)
+    render json: {user: UserSerializer.new(@user)}
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    render status: :ok
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :online, :id, :bio)
+    params.require(:user).permit(:username, :password, :online, :id, :bio, :avatar)
   end
 end
